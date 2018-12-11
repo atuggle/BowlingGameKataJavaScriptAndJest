@@ -1,5 +1,8 @@
 
 const game = {
+    bowl(numberOfPins) {
+    },
+
     score()  {
         return 0;
     }

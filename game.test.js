@@ -6,6 +6,14 @@ it('can create game', () => {
 })
 
 it('can bolw gutter game', () => {
+    bowlMany(myGame, 20, 0)
     let score = myGame.score();
-    expect(score).toBe(0);
+    expect(score).toBe(0)
 })
+
+//Helper functions below
+function bowlMany(myGame, numberOfThrows, numberOfPins) {
+    for (let i=0; i<numberOfThrows; i++) {
+        myGame.bowl(numberOfPins)
+    }
+}
