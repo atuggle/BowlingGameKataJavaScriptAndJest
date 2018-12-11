@@ -2,19 +2,31 @@
 
 class game {
     constructor() {
-        this.currentIndex = 0
+        this.throwIndex = 0
         this.totalPinsKnockedDown = []
-    }
+    };
 
     bowl(numberOfPins) {
-        this.totalPinsKnockedDown[this.currentIndex] = numberOfPins
-        this.currentIndex += 1
+        this.totalPinsKnockedDown[this.throwIndex] = numberOfPins
+        this.throwIndex += 1
+    };
+
+    isSpare(currentIndex) {
+        let frameScore = this.totalPinsKnockedDown[currentIndex] + this.totalPinsKnockedDown[currentIndex+1]
+        return  frameScore === 10
     };
 
     score()  {
         let totalScore = 0;
-        for (let i = 0; i < 20; i++) {
-            totalScore += this.totalPinsKnockedDown[i]
+        let currentIndex = 0;
+        for (let frame = 0; frame < 10; frame++) {
+            if (this.isSpare(currentIndex)) {
+                totalScore += this.totalPinsKnockedDown[currentIndex] + this.totalPinsKnockedDown[currentIndex+1] + this.totalPinsKnockedDown[currentIndex+2]
+                currentIndex += 2
+            } else {
+                totalScore += this.totalPinsKnockedDown[currentIndex] + this.totalPinsKnockedDown[currentIndex+1]
+                currentIndex += 2
+            }
         }
         return totalScore;
     };
