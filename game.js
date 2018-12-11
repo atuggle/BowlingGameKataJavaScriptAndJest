@@ -1,15 +1,23 @@
 
-let totalPinsKnockedDown = 0
 
-const game = {
+class game {
+    constructor() {
+        this.currentIndex = 0
+        this.totalPinsKnockedDown = []
+    }
 
     bowl(numberOfPins) {
-        totalPinsKnockedDown += numberOfPins
-    },
+        this.totalPinsKnockedDown[this.currentIndex] = numberOfPins
+        this.currentIndex += 1
+    };
 
     score()  {
-        return totalPinsKnockedDown;
-    }
-}
+        let totalScore = 0;
+        for (let i = 0; i < 20; i++) {
+            totalScore += this.totalPinsKnockedDown[i]
+        }
+        return totalScore;
+    };
+};
 
 module.exports = game;
