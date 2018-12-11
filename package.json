@@ -1,0 +1,14 @@
+{
+  "name": "bowling_kata_javascript",
+  "version": "1.0.0",
+  "description": "Run test with this command ```%> node gameTest.js```",
+  "main": "gameTest.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
