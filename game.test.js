@@ -31,6 +31,18 @@ it('can bowl one spare', () => {
     expect(score).toBe(48)
 })
 
+it('can bowl one strike', () => {
+    theGame = new myGame()
+    //Bowl spare first
+    theGame.bowl(5)
+    theGame.bowl(0)
+    theGame.bowl(10)
+    bowlMany(theGame, 16, 2)
+
+    let score = theGame.score()
+    expect(score).toBe(51)
+})
+
 //Helper functions below
 function bowlMany(game, numberOfThrows, numberOfPins) {
     for (let i=0; i<numberOfThrows; i++) {
