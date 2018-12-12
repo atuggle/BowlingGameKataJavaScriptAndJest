@@ -42,6 +42,24 @@ it('can bowl one strike', () => {
     expect(score).toBe(51)
 })
 
+it('can bowl 9 frames of strikes', () => {
+    theGame = new myGame()
+    bowlMany(theGame, 9, 10)
+    bowlMany(theGame, 2, 0)
+
+    let score = theGame.score()
+    expect(score).toBe(240)
+})
+
+it('can bowl 3 strikes in frame 10', () => {
+    theGame = new myGame()
+    bowlMany(theGame, 18, 0)
+    bowlMany(theGame, 3, 10)
+
+    let score = theGame.score()
+    expect(score).toBe(30)
+})
+
 it('can bowl perfect game', () => {
     theGame = new myGame()
     bowlMany(theGame, 21, 10)
