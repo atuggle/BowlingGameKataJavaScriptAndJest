@@ -62,7 +62,7 @@ it('can bowl 3 strikes in frame 10', () => {
 
 it('can bowl perfect game', () => {
     theGame = new myGame()
-    bowlMany(theGame, 21, 10)
+    bowlMany(theGame, 12, 10)
 
     let score = theGame.score()
     expect(score).toBe(300)

@@ -24,7 +24,7 @@ class game {
     score()  {
         let totalScore = 0;
         let currentIndex = 0;
-        for (let frame = 0; frame < 10; frame++) {
+        for (let frame=0; frame<10; frame++) {
             if (this.isStrike(currentIndex)) {
                 totalScore += 10 + this.totalPinsKnockedDown[currentIndex+1] + this.totalPinsKnockedDown[currentIndex+2]
                 currentIndex += 1
